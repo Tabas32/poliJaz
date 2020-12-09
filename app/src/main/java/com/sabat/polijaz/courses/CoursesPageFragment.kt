@@ -14,7 +14,7 @@ import com.sabat.polijaz.R
 /**
  * Fragment for displaying available courses
  */
-class CoursesPageFragment : Fragment() {
+class CoursesPageFragment : Fragment(), CoursesRViewAdapter.OnItemClickListener {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -26,7 +26,7 @@ class CoursesPageFragment : Fragment() {
 
         val coursesList = arrayOf("English", "German")
         recyclerView.layoutManager = LinearLayoutManager(this.activity?.applicationContext)
-        recyclerView.adapter = CoursesRViewAdapter(coursesList)
+        recyclerView.adapter = CoursesRViewAdapter(coursesList, this)
 
         return fragmentView
     }
@@ -38,4 +38,9 @@ class CoursesPageFragment : Fragment() {
             findNavController().navigate(R.id.action_CoursePageFragment_to_FirstFragment)
         }
     }
+
+    override fun onItemClicked(course: String) {
+        this.findNavController().navigate(R.id.action_CoursePageFragment_to_SecondFragment)
+    }
+
 }

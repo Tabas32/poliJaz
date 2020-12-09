@@ -19,7 +19,7 @@
         android:id="@+id/SecondFragment"
         android:name="com.sabat.polijaz.SecondFragment"
         android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+        tools:layout="@layout/lection_fragment">
 
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
@@ -34,5 +34,8 @@
         <action
             android:id="@+id/action_CoursePageFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_CoursePageFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
     </fragment>
 </navigation>

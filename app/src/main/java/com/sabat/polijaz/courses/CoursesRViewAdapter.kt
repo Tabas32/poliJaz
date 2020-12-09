@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sabat.polijaz.R
 
 class CoursesRViewAdapter(private val dataSet: Array<String>,
-                        val itemClickListener: OnItemClickListener) :
+                        private val itemClickListener: OnItemClickListener) :
     RecyclerView.Adapter<CoursesRViewAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
@@ -24,7 +24,6 @@ class CoursesRViewAdapter(private val dataSet: Array<String>,
                 clickListener.onItemClicked(courseName)
             }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
